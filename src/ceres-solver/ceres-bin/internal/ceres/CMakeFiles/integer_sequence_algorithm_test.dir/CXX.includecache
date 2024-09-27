@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ceres/internal/integer_sequence_algorithm.h
+utility
+-
+
+/home/zzy/Desktop/carto_ws/src/ceres-solver/internal/ceres/integer_sequence_algorithm_test.cc
+ceres/internal/integer_sequence_algorithm.h
+/home/zzy/Desktop/carto_ws/src/ceres-solver/internal/ceres/ceres/internal/integer_sequence_algorithm.h
+type_traits
+-
+utility
+-
+

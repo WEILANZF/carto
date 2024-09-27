@@ -1,0 +1,76 @@
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/zzy/Desktop/carto_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_bfae2 && [1/2] Building C object CMakeFiles/cmTC_bfae2.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_bfae2
+FAILED: cmTC_bfae2 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=sgemm_   CMakeFiles/cmTC_bfae2.dir/CheckFunctionExists.c.o  -o cmTC_bfae2   && :
+/usr/bin/ld: CMakeFiles/cmTC_bfae2.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/zzy/Desktop/carto_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_aa729 && [1/2] Building C object CMakeFiles/cmTC_aa729.dir/src.c.o
+[2/2] Linking C executable cmTC_aa729
+FAILED: cmTC_aa729 
+: && /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   CMakeFiles/cmTC_aa729.dir/src.c.o  -o cmTC_aa729   && :
+/usr/bin/ld: CMakeFiles/cmTC_aa729.dir/src.c.o: in function `main':
+src.c:(.text+0x48): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x50): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5c): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/zzy/Desktop/carto_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_03625 && [1/2] Building C object CMakeFiles/cmTC_03625.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_03625
+FAILED: cmTC_03625 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_03625.dir/CheckFunctionExists.c.o  -o cmTC_03625  -lpthreads && :
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/zzy/Desktop/carto_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_8730b && [1/2] Building C object CMakeFiles/cmTC_8730b.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_8730b
+FAILED: cmTC_8730b 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=cheev_   CMakeFiles/cmTC_8730b.dir/CheckFunctionExists.c.o  -o cmTC_8730b  /usr/lib/aarch64-linux-gnu/libf77blas.so  /usr/lib/aarch64-linux-gnu/libatlas.so && :
+/usr/bin/ld: CMakeFiles/cmTC_8730b.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
